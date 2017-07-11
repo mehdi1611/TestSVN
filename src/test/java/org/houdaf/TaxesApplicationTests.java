@@ -1,0 +1,19 @@
+package org.houdaf;
+
+import org.houdaf.entities.Entreprise;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class TaxesApplicationTests {
+
+	@Test
+	public void contextLoads() {
+		Entreprise en=new Entreprise("test", "email", "raisonSociale");
+		en.setNom("result");
+	}
+
+}

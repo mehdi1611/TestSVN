@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Entreprises</title>
+<link rel="stylesheet" type="text/css" href="/css/style.css"/>
+<link rel="stylesheet" type="text/css" href="/css/myStyle.css"/>
+</head>
+<body ng-app="MyApp" ng-controller="MyController">
+<header>
+		<div class="navbar navbar-inverse">
+		  <div class="container-fluid">
+		   <ul class="nav navbar-nav">
+		   <li><a ui-sref="entreprises">Entreprise</a></li>
+		   <li><a ui-sref="taxe">Taxes</a></li>
+		   <li><a>Saisie</a></li>
+		   </ul>
+		  </div>
+		</div>
+	</header>
+<div ui-view></div>
+	<footer>
+		<div class="navbar-fixed-bottom">
+			<small>Copyright El Mehdi HOUDAF</small>
+		</div>
+	</footer>
+    <script src="http://code.angularjs.org/1.2.13/angular.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+<script type="text/javascript" src="js/app2.js"></script>
+</body>
+</html>

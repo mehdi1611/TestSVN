@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Entreprises</title>
+<link rel="stylesheet" type="text/css" href="/css/style.css"/>
+<link rel="stylesheet" type="text/css" href="/css/myStyle.css"/>
+</head>
+<body ng-app="MyApp" ng-controller="MyController">
+<header>
+		<div class="navbar navbar-inverse">
+		  <div class="container-fluid">
+		   <ul class="nav navbar-nav">
+		   <li><a href="views/entreprises.html">Entreprise</a></li>
+		   <li><a>Taxes</a></li>
+		   <li><a>Saisie</a></li>
+		   </ul>
+		  </div>
+		</div>
+	</header>
+<div>
+	<div class="container">
+	<div class="panel panel-primary">
+	<div class="panel-heading">Liste des entreprises</div>
+	<div class="panel-body">
+	<div class="container">
+		<label>Mot clé :</label>
+		<input type="text" ng-model="motCle"/>
+		<button ng-click="chercher()">Chercher</button>
+	</div>
+	<table class="table table-striped">
+			<tr>
+				<th>Code</th><th>Nom</th><th>RS</th><th>Email</th>
+			</tr>
+			<tr ng-repeat="e in pageEntreprises.content">
+				<td onclick="f1()">{{e.code}}</td>
+				<td>{{e.nom}}</td>
+				<td>{{e.raisonSociale}}</td>
+				<td>{{e.email}}</td>
+			</tr>
+		</table>
+		<div class="container">
+			<ul class="nav nav-pills">
+				<li ng-class="{'active':pageCourante==$index}" class="clickable" ng-repeat="p in pages track by $index">
+				<a ng-click="goToPage($index)">{{$index+1}}</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	</div>
+	<h1>{{test}}</h1>
+		
+		<p>Input something in the input box:</p>
+<p>Name : <input type="text" ng-model="name" placeholder="Enter name here"></p>
+<h1>Hello {{name}}</h1>
+	</div>
+</div>
+	<footer>
+		<div class="navbar-fixed-bottom">
+			<small>Copyright El Mehdi HOUDAF</small>
+		</div>
+	</footer>
+<script type="text/javascript" src="//unpkg.com/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script type="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script type="text/javascript" src="js/app2.js"></script>
+</body>
+</html>
