@@ -1,0 +1,30 @@
+Ajout de la variable d'environnement système M2_HOME et l'introduire dans le PATH
+Création d'un projet maven sur CMD :
+1-
+mvn archetype:generate
+(commande) (plugin):(action)
+2-
+choisir le type de projet à créer
+3-
+entrer les parametres demandés
+4-
+pour rendre le projet importable sur eclipse:
+installation du plugin eclipse (dans le dossier du projet crée) :
+	mvn eclipse:eclipse
+	(cette commande permet aussi d'actualiser les dépendances
+
+	
+	
+Etapes:
+
+1- mvn comile
+2- mvn test
+3- mvn package
+4- mvn installation
+
+Déployer le projet :
+mvn tomcat7:deploy(ou undeploy) -Dtomcatpassword=admin -Dusername=admin
+
+
+Voir video :
+Maven et Industrialisation du GL Mise en oeuvre et Prise en main par Mohamed Youssfi

@@ -1,0 +1,29 @@
+Spring MVC project 
+
+Déclaration des dépendances dans pom.xml :
+	en fonction des framework utilisés
+
+création des entités (Annotations JPA) :
+	les entités doivent implémenter l'interface Serializable
+	Ajout des annotations necessaires (pour la persistance)
+		@Entity==>sur la classe
+		@Table(name="NOM_TABLE")==>sur la classe
+		@Id==>sur la attributs relative à l'id de la table
+		@GeneratedValue(strategy=GenerationType.IDENTITY)==>sur la attributs relative à l'id de la table
+		@Column(name="NOM_COLONNE")==>sur les attributs pour faire le mapping avec la BD (optionel)
+		Classe fille :
+		@OneToMany(mappedBy="nom de l'attribut relatif à l'association dans la classe étrangère)==> sur l'attribut relatif à la collection étrangère
+		@Inheritance(strategy=InheritanceType.SINGLE_TABLE)=>sur la classe (définir l'héritage) (classe fille)
+		@DiscriminatorValue(value="VALEUR_COLONNE_spéifiante")
+		Classe mère :
+		@DiscriminatorColumn(name="NOM_COLONNE_SPECIFIANTE" DiscriminatorType="") (classe mère)
+		@ManyToOne==> sur l'attribut relatif à la collection étrangère
+		@JoinColumn(name="NOM_COLONNE_DE_JOINTURE")==>sur l'attribut qui contient la liste d'objets
+		
+Couche DAO :
+	Création interfaceDAO
+		déclaration des méthodes
+		add, update, delete, consulter, chercher ...
+	Implémentation de l'interface :
+		interfaceDAOImpl
+			implémenter les méthodes
